@@ -1,13 +1,13 @@
 const express = require('express');
 const fs = require('fs');
-// const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 app.use(express.json());
 app.use(express.static('public'));
 
 
-app.get('/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
   res.sendFile(__dirname + '/notes.html');
 });
 

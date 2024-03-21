@@ -8,26 +8,18 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
+
     const newNote = req.body;
     newNote.id = v4();
 
-    fs.readFile(__dirname + '/db/db.json', 'utf8', (err, data) => {
+    db.push(newNote);
+
+    fs.writeFile('./db/db.json', JSON.stringify(db), (err) => {
         if (err) {
             console.error(err);
-            return res.status(500).end();
         }
-
-        const notes = JSON.parse(data);
-        notes.push(newNote);
-
-        fs.writeFile(__dirname + '/db/db.json', JSON.stringify(notes), (err) => {
-            if (err) {
-                console.error(err);
-                return res.status(500).end();
-            }
-
-            res.json(newNote);
-        });
+        res.json('note has been added');
+        return
     });
 });
 

@@ -1,3 +1,7 @@
+## About This Project
+```
+This is a full stack web app that allows users to write as well as view all their previous notes. 
+```
 
 ## User Story
 
@@ -25,3 +29,8 @@ WHEN I click on the "New Note" button in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column and the button disappears
 ```
 
+## Live app Link 
+
+```
+https://note-taker821-c249ee731cac.herokuapp.com/
+```
